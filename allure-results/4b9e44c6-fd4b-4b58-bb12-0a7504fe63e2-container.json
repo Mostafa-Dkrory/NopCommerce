@@ -1,0 +1,1 @@
+{"uuid":"4b9e44c6-fd4b-4b58-bb12-0a7504fe63e2","name":"BaseTest.tearMethod","children":["6b48610e-c552-47cc-9178-f44e2988d9c8"],"description":"","befores":[],"afters":[{"name":"tearMethod","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1711122740494,"stop":1711122740495}],"start":1711122740494,"stop":1711122740495}

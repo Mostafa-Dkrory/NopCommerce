@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+    <listener class-name="TestModules.Base.BaseTest" />
+    </listeners>
+    <parameter name = "URL" value = "https://demo.nopcommerce.com/"/>
+    <test verbose="2" preserve-order="true" name="C:/Users/DKRORY/IdeaProjects/NopCommerce">
+        <parameter name = "BrowserType" value = "Chrome"/>
+        <classes>
+            <class name="TestModules.Register.RegisterModuleTest">
+                <methods>
+                    <include name="validRegistration" />
+                </methods>
+            </class>
+            <class name="TestModules.Login.LoginModule">
+                <methods>
+                    <include name="LoginWithEmptyEmail" />
+                    <include name="LoginWithEmptyPassword" />
+                    <include name="LoginWithInValidCredentials" />
+                    <include name="LoginWithValidCredentials" />
+                    <include name="Logout" />
+                </methods>
+            </class>
+            <class name="TestModules.Category.CategoryModule">
+                <methods>
+                    <include name="categoryRedirection" />
+                </methods>
+            </class>
+            <class name="TestModules.Search.SearchModule">
+                <methods>
+                    <include name="validSearch" />
+                    <include name="invalidSearch" />
+                    <include name="popularTags" />
+                </methods>
+            </class>
+            <class name="TestModules.Home.HomeModule">
+                <methods>
+                    <include name="changeCurrencyToEuro" />
+                    <include name="changeCurrencyToDollar" />
+                    <include name="TestFacebookLink" />
+                    <include name="TestTwitterLink" />
+                    <include name="TestYoutubeLink" />
+                    <include name="TestRSSLink" />
+                </methods>
+            </class>
+            <class name="TestModules.ShoppingCart.ShoppingCartModuleTest">
+                <methods>
+                    <include name="addProductToCart" />
+                    <include name="removeFromCart" />
+                </methods>
+            </class>
+            <class name="TestModules.Wishlist.WishlistModule">
+                <methods>
+                    <include name="addToWishlist" />
+                    <include name="removeFromWishlist" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

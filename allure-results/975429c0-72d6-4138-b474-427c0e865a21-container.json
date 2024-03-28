@@ -1,0 +1,1 @@
+{"uuid":"975429c0-72d6-4138-b474-427c0e865a21","name":"ShoppingCartModule","children":["d6a60dbe-6ce8-42c9-852d-41161b4e7e4c"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1711416720664,"stop":1711416725018}],"afters":[],"start":1711416704887,"stop":1711416731801}
