@@ -16,6 +16,7 @@ public class WishlistModuleTest extends BaseTest {
         String pName = home.getTheProductName18();
         home.scrollToProduct();
         home.addToWishList();
+        home.addToWishList();
         assertTrue(home.isAddedToWishlistSuccessfully());
         WishlistPage wishlistPage = new WishlistPage(driver);
         wishlistPage.gotoWishlistFromNotoficationBar();

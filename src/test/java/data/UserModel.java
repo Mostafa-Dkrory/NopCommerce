@@ -24,8 +24,7 @@ public class UserModel{
         zipCode = new Faker().address().zipCode();
         phoneNumber = new Faker().phoneNumber().phoneNumber();
         address = new Faker().address().fullAddress();
-        System.out.println(email);
-        System.out.println(password);}
+    }
     public String getfName() {
         return fName;
     }

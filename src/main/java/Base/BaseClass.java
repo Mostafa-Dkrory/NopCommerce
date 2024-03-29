@@ -32,9 +32,10 @@ public class BaseClass {
         /*WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(element));
         webElement.clear();
         webElement.sendKeys(text);*/
-        WebElement webElement = driver.findElement(element);
-        webElement.sendKeys(text);
-        
+        //WebElement webElement = driver.findElement(element).sendKeys(text);
+        //webElement.sendKeys(text);
+        driver.findElement(element).sendKeys(text);
+
     }
 
     protected String getText(By element) {
@@ -46,6 +47,16 @@ public class BaseClass {
         WebElement webElement = driver.findElement(element);
         Select select = new Select(webElement);
         select.selectByVisibleText(txt);
+    }
+    protected void selectByValue(By element, String txt) {
+        WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(element));
+        Select select = new Select(webElement);
+        select.selectByValue(txt);
+    }
+    protected void selectByIndex(By element, int index) {
+        WebElement webElement = driver.findElement(element);
+        Select select = new Select(webElement);
+        select.selectByIndex(index);
     }
 
     protected WebElement waitToPresent(By locator) {

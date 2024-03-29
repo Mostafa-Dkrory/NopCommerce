@@ -10,7 +10,7 @@ public class RegisterModuleTest extends BaseTest {
     
     
     @Test
-    void validRegistration(){
+    public void validRegistration(){
         UserModel user = new UserModel();
         RegisterPage registerPage = homePage.clickRegisterBtn();
         registerPage.selectGender("male");

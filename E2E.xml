@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="2">
+<suite name="Cross Browser E2E Test Suite" parallel="tests" thread-count="2">
     <listeners>
         <listener class-name="TestModules.Base.BaseTest" />
     </listeners>
     <parameter name = "URL" value = "https://demo.nopcommerce.com/"/>
-    <test verbose="2" name="C:/Users/DKRORY/IdeaProjects/NopCommerce">
+    <test verbose="2" name="NopCommerce - Chrome E2E Test">
         <parameter name = "BrowserType" value = "Chrome"/>
         <classes>
-            <class name="TestModules.Register.RegisterModuleTest">
+            <class name="E2E.E2EModuleTest">
             <methods>
-                <include name="validRegistration" />
+                <include name="End2EndTest" />
             </methods>
         </class>
-        <class name="TestModules.Login.LoginModule">
+        </classes>
+    </test>
+    <test verbose="2" name="NopCommerce - Edge E2E Test">
+        <parameter name = "BrowserType" value = "Edge"/>
+        <classes>
+            <class name="E2E.E2EModuleTest">
             <methods>
-                <include name="LoginWithValidCredentials" />
-                <exclude name="Logout" />
-            </methods>
-        </class>
-        <class name="TestModules.Category.CategoryModuleTest">
-            <methods>
-                <include name="categoryRedirection" />
-            </methods>
-        </class>
-        <class name="TestModules.Search.SearchModuleTest">
-            <methods>
-                <include name="validSearch" />
-                <include name="invalidSearch" />
-                <include name="popularTags" />
-            </methods>
-        </class>
-        <class name="TestModules.ShoppingCart.ShoppingCartModuleTest">
-            <methods>
-                <include name="addProductToCart" />
-                <exclude name="removeFromCart" />
+                <include name="End2EndTest" />
             </methods>
         </class>
         </classes>

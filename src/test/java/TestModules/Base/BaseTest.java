@@ -2,6 +2,8 @@ package TestModules.Base;
 
 import Pages.HomePage;
 import data.UserModel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -29,13 +31,26 @@ public class BaseTest implements ITestListener{
     protected HomePage homePage;
     private WebDriverWait wait;
 
-/*    @BeforeTest
+    private static Logger logger = LogManager.getLogger();
+
+
+    /*    @BeforeTest
     public void beforeTest(){
         user = new UserModel();
     }*/
+    @BeforeSuite
+    public void beforeSuite(ITestContext context){
+        logger.info("Starting " + context.getSuite().getName() + "Test Suite...");
+    }
+    @AfterSuite
+    public void afterSuite(ITestContext context){
+        logger.info("Ending " + context.getSuite().getName() + "Test Suite...");
+    }
+
     @BeforeClass
     @Parameters({"URL","BrowserType"})
     public void setUp(String url, String browserType, ITestContext context) {
+        logger.info("Starting " + context.getCurrentXmlTest().getClass().getName() + "Test Class...");
         if (browserType.equalsIgnoreCase("Edge"))
             driver = new EdgeDriver();
         else if (browserType.equalsIgnoreCase("Firefox"))
@@ -52,16 +67,22 @@ public class BaseTest implements ITestListener{
     public void goHome(){
         driver.get("https://demo.nopcommerce.com/");
     }
+    @BeforeMethod
+    public void beforeMethod(ITestResult result){
+        logger.info("Starting " + result.getMethod().getMethodName() + "Test Method...");
+
+    }
 
     @AfterMethod
     public void tearMethod(ITestResult result){
         if (result.getStatus() == ITestResult.FAILURE) {
             captureScreenshot(result.getMethod().getMethodName());
+            logger.error("Error in " + result.getMethod().getMethodName() + "Test Method...");
         }
+        logger.info("Ending " + result.getMethod().getMethodName() + "Test Method...");
     }
     @AfterClass
-    public void tearDown(ITestContext result){
-
+    public void tearDown(){
         if (driver != null) {
             try {
                 driver.quit();
@@ -112,6 +133,15 @@ public class BaseTest implements ITestListener{
     }
     public WebDriver getDriver() {
         return driver;
+    }
+    public void timer(long time){
+        try {
+            // Sleep for 1 second (1000 milliseconds)
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
     }
     /*@DataProvider
     public Object[][] Authentication() throws Exception{
