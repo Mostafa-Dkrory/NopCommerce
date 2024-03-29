@@ -23,11 +23,11 @@ public class SearchModuleTest extends BaseTest {
         searchPage.search();
         Assert.assertTrue(searchPage.isNoResultMSG());
     }
-    @Test(dataProvider = "PopularTags")
+    @Test(dataProvider = "PopularTags",dependsOnMethods = "validSearch")
     public void popularTags(String tag){
         SearchPage searchPage = new SearchPage(super.driver);
         searchPage.chooseTag(tag);
-        //TODO ass assertion
+        Assert.assertTrue(searchPage.getSearchTitle().contains(tag));
     }
     @DataProvider
     public Object[] PopularTags() {

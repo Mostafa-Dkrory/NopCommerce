@@ -26,6 +26,7 @@ public class SearchPage extends BaseClass {
         return getText(searchTitle);
     }
     public void chooseTag(String tag){
+        clickOn(By.linkText(tag));
 
     }
 }

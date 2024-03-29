@@ -33,7 +33,7 @@ public class HomeModuleTest extends BaseTest {
         home.clickOnFacebook();
         home.switchToNext();
         assertTrue(home.getCurrentUrl().contains("nopCommerce"),"FaceBook icon is not working");
-        home.closeTab();
+        //home.closeTab();
     }
     @Test
     void TestTwitterLink(){
@@ -41,7 +41,7 @@ public class HomeModuleTest extends BaseTest {
         home.clickOnTwitter();
         home.switchToNext();
         assertEquals(home.getCurrentUrl(),"https://twitter.com/nopCommerce","Twitter icon is not working");
-        home.closeTab();
+        //home.closeTab();
     }
     @Test
     void TestYoutubeLink(){
@@ -49,7 +49,7 @@ public class HomeModuleTest extends BaseTest {
         home.clickOnYoutube();
         home.switchToNext();
         assertEquals(home.getCurrentUrl(),"https://www.youtube.com/user/nopCommerce","Youtube icon is not working");
-        home.closeTab();
+        //home.closeTab();
     }
     @Test
     void TestRSSLink(){
@@ -57,7 +57,7 @@ public class HomeModuleTest extends BaseTest {
         home.clickOnRSS();
         //home.switchToNext();
         assertEquals(home.getCurrentUrl(),"https://demo.nopcommerce.com/news/rss/1","Twitter icon is not working");
-        home.closeTab();
+        //home.closeTab();
     }
 
 
