@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -39,19 +40,19 @@ public class BaseTest implements ITestListener{
     public void beforeTest(){
         user = new UserModel();
     }*/
-    @BeforeSuite
+    /*@BeforeSuite
     public void beforeSuite(ITestContext context){
         logger.info("Starting " + context.getSuite().getName() + "Test Suite...");
     }
     @AfterSuite
     public void afterSuite(ITestContext context){
         logger.info("Ending " + context.getSuite().getName() + "Test Suite...");
-    }
+    }*/
 
     @BeforeClass
     @Parameters({"URL","BrowserType"})
     public void setUp(String url, String browserType, ITestContext context) {
-        logger.info("Starting " + context.getCurrentXmlTest().getClass().getName() + "Test Class...");
+        //logger.info("Starting " + context.getCurrentXmlTest().getClass().getName() + "Test Class...");
         if (browserType.equalsIgnoreCase("Edge")) {
             driver = new EdgeDriver();
         }
@@ -70,11 +71,10 @@ public class BaseTest implements ITestListener{
     public void goHome(){
         driver.get("https://demo.nopcommerce.com/");
     }
-    @BeforeMethod
+    /*@BeforeMethod
     public void beforeMethod(ITestResult result){
         logger.info("Starting " + result.getMethod().getMethodName() + "Test Method...");
-
-    }
+    }*/
 
     @AfterMethod
     public void tearMethod(ITestResult result){
@@ -82,11 +82,12 @@ public class BaseTest implements ITestListener{
             captureScreenshot(result.getMethod().getMethodName());
             logger.error("Error in " + result.getMethod().getMethodName() + "Test Method...");
         }
-        logger.info("Ending " + result.getMethod().getMethodName() + "Test Method...");
+        //logger.info("Ending " + result.getMethod().getMethodName() + "Test Method...");
     }
     @AfterClass
     public void tearDown(){
         if (driver != null) {
+
             try {
                 driver.quit();
             } catch (WebDriverException e) {
@@ -118,7 +119,7 @@ public class BaseTest implements ITestListener{
             // Create a directory if it doesn't exist
             // Update with your desired directory
             String screenshotDirectory = "C:\\Users\\DKRORY\\IdeaProjects\\NopCommerce\\Screenshots";
-            Path directoryPath = Path.of(screenshotDirectory);
+            Path directoryPath = Paths.get(screenshotDirectory);
             Files.createDirectories(directoryPath);
 
             // Save the screenshot to the specified directory

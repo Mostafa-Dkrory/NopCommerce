@@ -65,14 +65,6 @@ public class E2EModuleTest extends BaseTest {
         checkOutPage.paymentInfoContinueBtn();
         checkOutPage.confirmOrderContinueBtn();
         assertTrue(checkOutPage.isSuccessfullyOrdered(),"Failed to Check Out!");
-        timer(5000);
-
-
-
-
-
-
-
-
+        timer(1000);
     }
 }

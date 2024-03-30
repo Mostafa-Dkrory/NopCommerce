@@ -58,7 +58,9 @@ public void paymentMethodContinueBtn(){
         waitToPresent(paymentInfoContinueBtn).click();;
     }
     public void confirmOrderContinueBtn(){
-        waitToPresent(confirmOrderContinueBtn).click();;
+
+        waitToBeClickable(confirmOrderContinueBtn).click();;
+
     }
 
     public boolean isSuccessfullyOrdered(){

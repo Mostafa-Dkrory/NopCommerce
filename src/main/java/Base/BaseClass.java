@@ -59,7 +59,12 @@ public class BaseClass {
         select.selectByIndex(index);
     }
 
+    protected WebElement waitToBeClickable(By locator) {
+
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
     protected WebElement waitToPresent(By locator) {
+
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     protected Boolean isDisplayed(By locator) {
