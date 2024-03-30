@@ -38,7 +38,9 @@ public class HomePage extends BaseClass {
     }
 
     public LoginPage clickLoginBtn(){
-        driver.findElement(homeLoginBtn).click();
+        waitToPresent(homeLoginBtn);
+        waitToBeClickable(homeLoginBtn).click();
+        //driver.findElement(homeLoginBtn).click();
         return new LoginPage(driver);
 
     }public RegisterPage clickRegisterBtn(){
