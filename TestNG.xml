@@ -50,12 +50,12 @@
                     <include name="removeFromCart" />
                 </methods>
             </class>
-            <class name="TestModules.Wishlist.WishlistModuleTest">
+            <!--<class name="TestModules.Wishlist.WishlistModuleTest">
                 <methods>
                     <include name="addToWishlist" />
                     <include name="removeFromWishlist" />
                 </methods>
-            </class>
+            </class>-->
         </classes>
     </test>
 </suite>

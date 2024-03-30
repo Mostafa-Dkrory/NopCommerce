@@ -28,6 +28,7 @@ import java.time.format.DateTimeFormatter;
 public class BaseTest implements ITestListener{
     protected static UserModel user;
     protected WebDriver driver;
+
     protected HomePage homePage;
     private WebDriverWait wait;
 
@@ -51,13 +52,15 @@ public class BaseTest implements ITestListener{
     @Parameters({"URL","BrowserType"})
     public void setUp(String url, String browserType, ITestContext context) {
         logger.info("Starting " + context.getCurrentXmlTest().getClass().getName() + "Test Class...");
-        if (browserType.equalsIgnoreCase("Edge"))
+        if (browserType.equalsIgnoreCase("Edge")) {
             driver = new EdgeDriver();
-        else if (browserType.equalsIgnoreCase("Firefox"))
+        }
+        else if (browserType.equalsIgnoreCase("Firefox")) {
             driver = new FirefoxDriver();
-        else
+        }
+        else {
             driver = new ChromeDriver();
-
+        }
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));

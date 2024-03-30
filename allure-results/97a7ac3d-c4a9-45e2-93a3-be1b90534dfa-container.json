@@ -1,1 +1,0 @@
-{"uuid":"97a7ac3d-c4a9-45e2-93a3-be1b90534dfa","name":"HomeModule.gotoHome","children":["4701fcb2-85f2-4d43-a9ad-37165f53cca7"],"description":"","befores":[{"name":"gotoHome","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1710919698717,"stop":1710919699090}],"afters":[],"start":1710919698717,"stop":1710919699090}

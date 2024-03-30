@@ -1,1 +1,0 @@
-{"uuid":"77216c89-f7c9-4438-a1e9-5941b27996f8","name":"BaseTest.goHome","children":["6fbcd3af-0901-4ec1-bd4b-df26321c5716"],"description":"","befores":[{"name":"goHome","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1711136013589,"stop":1711136014121}],"afters":[],"start":1711136013589,"stop":1711136014121}
