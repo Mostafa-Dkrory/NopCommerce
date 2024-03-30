@@ -13,7 +13,7 @@
                     <include name="validRegistration" />
                 </methods>
             </class>
-            <class name="TestModules.Login.LoginModule">
+            <class name="TestModules.Login.LoginModuleTest">
                 <methods>
                     <include name="LoginWithEmptyEmail" />
                     <include name="LoginWithEmptyPassword" />

@@ -2,22 +2,12 @@ package TestModules.Login;
 
 import Pages.LoginPage;
 import TestModules.Base.BaseTest;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class LoginModule extends BaseTest {
-    private final By loginBtn = By.className("ico-login");
-    private final By loginWelcomeMSG = By.className("page-title");
-
-
-
-/*    @BeforeMethod(onlyForGroups = {"Login"})
-    void goToLoginPage(){
-
-    }*/
+public class LoginModuleTest extends BaseTest {
 
     @Test(dependsOnMethods = "validRegistration")
     void LoginWithValidCredentials(){
