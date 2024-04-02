@@ -29,11 +29,6 @@ public class BaseClass {
     }
 
     protected void sendKeys(By element, String text) {
-        /*WebElement webElement = wait.until(ExpectedConditions.presenceOfElementLocated(element));
-        webElement.clear();
-        webElement.sendKeys(text);*/
-        //WebElement webElement = driver.findElement(element).sendKeys(text);
-        //webElement.sendKeys(text);
         driver.findElement(element).sendKeys(text);
 
     }
